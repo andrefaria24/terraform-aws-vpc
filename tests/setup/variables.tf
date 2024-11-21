@@ -94,3 +94,12 @@ variable "create_private_subnets" {
   type        = bool
   default     = true
 }
+
+variable "AWS_ACCESS_KEY_ID" {
+  type        = string
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {
+  type        = string
+  sensitive = true
+}
