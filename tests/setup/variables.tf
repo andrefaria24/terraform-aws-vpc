@@ -94,17 +94,3 @@ variable "create_private_subnets" {
   type        = bool
   default     = true
 }
-
-variable "aws_access_key" {
-  type        = string
-  sensitive = true
-}
-variable "aws_secret_key" {
-  type        = string
-  sensitive = true
-}
-
-variable "aws_token" {
-  type        = string
-  sensitive = true
-}
