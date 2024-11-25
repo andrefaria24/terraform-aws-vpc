@@ -1,21 +1,21 @@
 variables {
-  region               = "us-east-2"
-  prefix               = "tftest"
-  env                  = "demo"
-  vpc_cidr             = "10.0.0.0/8"
-  public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  private_subnet_cidrs = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
-  availability_zones   = ["us-east-2a", "us-east-2b", "us-east-2c"]
-  enable_nat_gateway   = true
-  single_nat_gateway   = false
+  region                 = "us-east-2"
+  prefix                 = "tftest"
+  env                    = "demo"
+  vpc_cidr               = "10.0.0.0/8"
+  public_subnet_cidrs    = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  private_subnet_cidrs   = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+  availability_zones     = ["us-east-2a", "us-east-2b", "us-east-2c"]
+  enable_nat_gateway     = true
+  single_nat_gateway     = false
   create_private_subnets = true
-  tags                 = { "test" = "value" }
+  tags                   = { "test" = "value" }
 }
 
 run "valid_inputs" {
   module {
     source = "./tests/setup"
-  }  
+  }
 
   command = plan
 }
@@ -23,7 +23,7 @@ run "valid_inputs" {
 run "invalid_region" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -35,7 +35,7 @@ run "invalid_region" {
 run "invalid_prefix" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -47,7 +47,7 @@ run "invalid_prefix" {
 run "invalid_env" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -59,7 +59,7 @@ run "invalid_env" {
 run "invalid_vpc_cidr" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -71,7 +71,7 @@ run "invalid_vpc_cidr" {
 run "invalid_public_subnet_cidrs" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -83,7 +83,7 @@ run "invalid_public_subnet_cidrs" {
 run "invalid_private_subnet_cidrs" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -95,7 +95,7 @@ run "invalid_private_subnet_cidrs" {
 run "invalid_availability_zones" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = plan
   variables {
@@ -107,7 +107,7 @@ run "invalid_availability_zones" {
 run "integration_test" {
   module {
     source = "./tests/setup"
-  } 
+  }
 
   command = apply
 

@@ -63,8 +63,8 @@ variable "availability_zones" {
   type        = list(string)
   default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
   validation {
-    condition     = alltrue([
-      for az in var.availability_zones : 
+    condition = alltrue([
+      for az in var.availability_zones :
       can(regex("^[a-z]{2}-[a-z]+-[1-2][a-c]$", az))
     ])
     error_message = "All availability zones must be valid AWS AZs in the format 'region-name-number', e.g., 'us-east-2a'. Only AZs a, b, and c are allowed."
